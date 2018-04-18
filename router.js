@@ -7,21 +7,21 @@ const connectionController = require('./controllers/connection.controller');
 
 const router = new Router;
 
-router.get('/tutor', (ctx, next) => tutorController.getTutor);
-router.get('/tutors', (ctx, next) => tutorController.getTutors);
-router.get('/student', (ctx, next) => studentController.getStudent);
-router.get('/students', (ctx, next) => studentController.getStudents);
+router.get('/tutor', tutorController.getTutor);
+router.get('/tutors', tutorController.getTutors);
+router.get('/student', studentController.getStudent);
+router.get('/students', studentController.getStudents);
 
-router.post('/tutor', (ctx, next) => tutorController.createTutor);
-router.post('/student', (ctx, next) => studentController.createStudent);
-router.post('/connection', (ctx, next) => connectionController.createConnection);
+router.post('/tutor', tutorController.createTutor);
+router.post('/student', studentController.createStudent);
+router.post('/connection', connectionController.createConnection);
 
-router.put('/tutor', (ctx, next) => tutorController.updateTutor);
-router.put('/student', (ctx, next) => studentController.updateStudent);
-router.put('/connection', (ctx, next) => connectionController.updateConnection);
+router.put('/tutor', tutorController.updateTutor);
+router.put('/student', studentController.updateStudent);
+router.put('/connection', connectionController.updateConnection);
 
-router.delete('/tutor', (ctx, next) => tutorController.deleteTutor);
-router.delete('/student', (ctx, next) => studentController.deleteStudent);
-router.delete('/connection', (ctx, next) => connectionController.deleteConnection);
+router.delete('/tutor', tutorController.deleteTutor);
+router.delete('/student', studentController.deleteStudent);
+router.delete('/connection', connectionController.deleteConnection);
 
 module.exports = router;

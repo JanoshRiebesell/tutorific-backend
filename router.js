@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 const Router = require('koa-router');
 const tutorController = require('./controllers/tutor.controller');

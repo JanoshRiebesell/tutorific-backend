@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 module.exports.getStudent = async (ctx, next) => {};
 module.exports.getStudents = async (ctx, next) => {};

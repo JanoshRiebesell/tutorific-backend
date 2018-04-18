@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 const Koa = require('koa');
 const logger = require('koa-logger');

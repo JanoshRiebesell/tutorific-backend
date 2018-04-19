@@ -5,7 +5,10 @@ const logger = require('koa-logger');
 const compress = require('koa-compress');
 const bodyParser = require('koa-bodyparser');
 const cors = require('kcors');
-require('dotenv').config()
+require('dotenv').config();
+
+const errorHandler = require('./middlewares/error.handler');
+require('./db');
 
 const router = require('./router');
 
@@ -14,6 +17,8 @@ const app = new Koa();
 app.use(logger());
 app.use(cors());
 app.use(bodyParser());
+
+app.use(errorHandler);
 
 app.use(router.routes());
 app.use(router.allowedMethods());

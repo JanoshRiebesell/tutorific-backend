@@ -3,5 +3,6 @@ module.exports = async (ctx, next) => {
     await next();
   } catch (err) {
     ctx.body = err.message;
+    ctx.status = 500;
   }
 };

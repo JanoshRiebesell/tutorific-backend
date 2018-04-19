@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const SubjectSchema = new mongoose.Schema({
+module.exports = new mongoose.Schema({
   name: {
     type: String,
     enum: ['Math', 'Physics', 'Chemistry', 'Biology', 'English',
@@ -13,8 +13,9 @@ const SubjectSchema = new mongoose.Schema({
   grade: {
     type: Number,
     min: 1,
-    max: 13
+    max: 13,
+    required: 'Subject must have a grade!'
   }
+}, {
+  _id: false
 });
-
-module.exports = mongoose.model('Subject', SubjectSchema);

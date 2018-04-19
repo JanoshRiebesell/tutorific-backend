@@ -10,16 +10,16 @@ const ConnectionsSchema = new mongoose.Schema({
   student: {
     type: mongoose.Schema.ObjectId,
     ref: 'Student',
-    required: 'Connection must have a student!'
+    required: 'A connection must have a student!'
   },
   tutor: {
     type: mongoose.Schema.ObjectId,
     ref: 'Tutor',
-    required: 'Connection must have a tutor!'
+    required: 'A connection must have a tutor!'
   },
   subjects: {
-    type: [mongoose.Schema.ObjectId],
-    ref: 'Subject'
+    type: [Subject],
+    validate: [subjects => subjects.length > 0, 'A connection must have at least one subject!']
   },
   status: {
     type: String,

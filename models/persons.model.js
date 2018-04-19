@@ -1,4 +1,6 @@
-'use  strict';
+'use strict';
+
+const validator = require('validator');
 
 module.exports = {
   firstname: {

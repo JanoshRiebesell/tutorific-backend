@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "0a09b081-0d2d-4cfe-8bdc-103efabb7c1b",
+		"name": "Tutorific",
+		"description": "Codeworks 6-day solo project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Tutor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/tutor/5ad858ff7fad8911f4207122",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tutor",
+						"5ad858ff7fad8911f4207122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tutors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/tutors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tutors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tutor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\": \"Stevee\",\n\t\"lastname\": \"Walker\",\n\t\"email\": \"stevee@walker.com\",\n\t\"address\": {\n\t\t\"street\": \"Seattle\",\n\t\t\"number\": \"123\",\n\t\t\"city\": \"Washington\",\n\t\t\"zip\": \"98101\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"subjects\": [\n\t    {\"name\": \"History\", \"grades\": [\"7\"]},\n\t    {\"name\": \"French\", \"grades\": [\"7\"]},\n\t    {\"name\": \"Politics\", \"grades\": [\"1\",\"13\"]}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/tutor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tutor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"address\": {\n\t\t\"number\": \"124\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/tutor/5ada12cde388892dc31d4702",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tutor",
+						"5ada12cde388892dc31d4702"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Tutor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/tutor/5ada124f0bab612da55ef1bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tutor",
+						"5ada124f0bab612da55ef1bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/student/5ad858ff7fad8911f4207122",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"5ad858ff7fad8911f4207122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\": \"Tim\",\n\t\"lastname\": \"Urban\",\n\t\"email\": \"tim@urban.com\",\n\t\"address\": \"New York City\",\n\t\"grade\": \"11\",\n\t\"schoolType\": \"high\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Student",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"address\": {\n\t\t\"number\": \"124\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/student/5ada12cde388892dc31d4702",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"5ada12cde388892dc31d4702"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/student/5ada124f0bab612da55ef1bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"5ada124f0bab612da55ef1bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Connection",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"student\": \"5ad865ec6cb2b11506035f31\",\n\t\"tutor\": \"5ad858f17fad8911f4207121\",\n\t\"subjects\": [{\"name\": \"Math\", \"grade\": \"7\"}, {\"name\": \"Physics\", \"grade\": \"7\"}]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/connection",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"connection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Connection",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"subjects\": [\n    {\"name\": \"Math\", \"grade\": \"7\"},\n    {\"name\": \"Biology\", \"grade\": \"7\"},\n    {\"name\": \"Physics\", \"grade\": \"7\"}\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/connection/5ad89838dd42f41cd04936e7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"connection",
+						"5ad89838dd42f41cd04936e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Connection",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/connection/5ad89838dd42f41cd04936e7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"connection",
+						"5ad89838dd42f41cd04936e7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

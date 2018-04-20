@@ -1,8 +1,9 @@
 'use strict';
 
-const Address = require('./address.model');
-
 const validator = require('validator');
+
+const Address = require('./address.model');
+const Subject = require('./subjects.model');
 
 module.exports = {
   firstname: {
@@ -36,6 +37,10 @@ module.exports = {
   address: {
     type: Address,
     required: 'A person must provide an address or city district.'
+  },
+  subjects: {
+    type: [Subject],
+    validate: [subjects => subjects.length > 0, 'A connection must have at least one subject!']
   },
   status: {
     type: String,

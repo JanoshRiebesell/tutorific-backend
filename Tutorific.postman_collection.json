@@ -59,7 +59,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstname\": \"Stevee\",\n\t\"lastname\": \"Walker\",\n\t\"email\": \"stevee@walker.com\",\n\t\"address\": {\n\t\t\"street\": \"Seattle\",\n\t\t\"number\": \"123\",\n\t\t\"city\": \"Washington\",\n\t\t\"zip\": \"98101\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"subjects\": [\n\t    {\"name\": \"History\", \"grades\": [\"7\"]},\n\t    {\"name\": \"French\", \"grades\": [\"7\"]},\n\t    {\"name\": \"Politics\", \"grades\": [\"1\",\"13\"]}\n\t]\n}"
+					"raw": "{\n\t\"firstname\": \"Jimmy\",\n\t\"lastname\": \"Hendrix\",\n\t\"email\": \"jimmy@hendrix.com\",\n\t\"address\": {\n\t\t\"street\": \"Seattle\",\n\t\t\"number\": \"123\",\n\t\t\"city\": \"Washington\",\n\t\t\"zip\": \"98101\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"History\", \"grades\": [\"1\",\"12\"]},\n\t    {\"name\": \"French\", \"grades\": [\"1\",\"7\"]},\n\t    {\"name\": \"Math\", \"grades\": [\"3\",\"12\"]},\n\t    {\"name\": \"Politics\", \"grades\": [\"1\",\"13\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/tutor",
@@ -178,7 +178,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstname\": \"Tim\",\n\t\"lastname\": \"Urban\",\n\t\"email\": \"tim@urban.com\",\n\t\"address\": \"New York City\",\n\t\"grade\": \"11\",\n\t\"schoolType\": \"high\"\n}"
+					"raw": "{\n\t\"firstname\": \"Sam\",\n\t\"lastname\": \"Slayer\",\n\t\"email\": \"sam@slayer.com\",\n\t\"address\": {\n\t\t\"street\": \"Long Lane\",\n\t\t\"number\": \"12345\",\n\t\t\"city\": \"Seattle\",\n\t\t\"zip\": \"98101\",\n\t\t\"state\": \"Washington\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"Physics\", \"grades\": [\"12\"]},\n\t    {\"name\": \"Biology\", \"grades\": [\"2\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\",\n\t\"grade\": \"12\",\n\t\"schoolType\": \"high\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/student",

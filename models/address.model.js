@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 const mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
@@ -21,6 +19,7 @@ module.exports = new mongoose.Schema({
     type: String,
     required: 'An address must have a zip!'
   },
+  state: String,
   country: {
     type: String,
     required: 'An address must have a country!'

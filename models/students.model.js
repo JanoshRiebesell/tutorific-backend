@@ -8,8 +8,8 @@ const Subject = require('./subjects.model');
 const StudentSchema = new mongoose.Schema({
   ...person,
   subjects: {
-    type: [mongoose.Schema.ObjectId],
-    ref: 'Subject'
+    type: [Subject],
+    validate: [subjects => subjects.length > 0, 'A connection must have at least one subject!']
   },
   schoolType: {
     type: String,

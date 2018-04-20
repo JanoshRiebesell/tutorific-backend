@@ -1,5 +1,7 @@
 'use strict';
 
+const Address = require('./address.model');
+
 const validator = require('validator');
 
 module.exports = {
@@ -32,7 +34,7 @@ module.exports = {
     validate: [(num) => {validator.isMobilePhone(num, 'any')}, 'Invalid phone number!']
   },
   address: {
-    type: String,
+    type: Address,
     required: 'A person must provide an address or city district.'
   },
   status: {

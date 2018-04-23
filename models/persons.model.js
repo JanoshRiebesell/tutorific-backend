@@ -28,6 +28,11 @@ module.exports = {
     trim: true,
     validate: [validator.isEmail, 'Invalid email!']
   },
+  password: {
+    type: String,
+    required: 'A person must provide a password!',
+    minlength: 6
+  },
   phone: {
     type: String,
     lowercase: true,

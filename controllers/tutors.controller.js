@@ -1,6 +1,6 @@
 'use strict';
 
-const Tutor = require('../models/tutors.model');
+const Tutor = require('../models/tutor.model');
 
 module.exports.getTutor = async (ctx, next) => {
   ctx.body = await Tutor.findById(ctx.params.id);

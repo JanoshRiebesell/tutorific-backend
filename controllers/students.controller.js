@@ -1,6 +1,6 @@
 'use strict';
 
-const Student = require('../models/students.model');
+const Student = require('../models/student.model');
 
 module.exports.getStudent = async (ctx, next) => {
   ctx.body = await Student.findById(ctx.params.id);

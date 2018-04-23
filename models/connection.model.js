@@ -2,9 +2,9 @@
 
 const mongoose = require('mongoose');
 const validator = require('validator');
-const Subject = require('./subjects.model');
-const Student = require('./students.model');
-const Tutor = require('./tutors.model');
+const Subject = require('./subject.model');
+const Student = require('./student.model');
+const Tutor = require('./tutor.model');
 
 const ConnectionsSchema = new mongoose.Schema({
   student: {

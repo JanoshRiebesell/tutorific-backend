@@ -1,6 +1,6 @@
 'use strict';
 
-const Connection = require('../models/connections.model');
+const Connection = require('../models/connection.model');
 
 module.exports.createConnection = async (ctx, next) => {
   ctx.body = await Connection.create(ctx.request.body);

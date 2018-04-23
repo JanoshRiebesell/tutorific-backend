@@ -3,7 +3,7 @@
 const validator = require('validator');
 
 const Address = require('./address.model');
-const Subject = require('./subjects.model');
+const Subject = require('./subject.model');
 
 module.exports = {
   firstname: {

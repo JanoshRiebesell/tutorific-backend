@@ -2,8 +2,8 @@
 
 const validator = require('validator');
 
-const Address = require('./address.model');
-const Subject = require('./subject.model');
+const Address = require('./address.schema');
+const Subject = require('./subject.schema');
 
 module.exports = {
   firstname: {

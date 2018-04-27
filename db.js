@@ -5,5 +5,5 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/tutorific');
 
 mongoose.connection.on('connected', () => {
-  console.log('Connected to Tutorific database');
+  console.log('Connected to local Tutorific database');
 });

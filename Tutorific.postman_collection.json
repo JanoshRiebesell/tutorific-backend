@@ -13,12 +13,10 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/tutor/5ad858ff7fad8911f4207122",
-					"protocol": "http",
+					"raw": "{{devUrl}}/tutor/5ad858ff7fad8911f4207122",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"tutor",
 						"5ad858ff7fad8911f4207122"
@@ -34,12 +32,10 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/tutors",
-					"protocol": "http",
+					"raw": "{{devUrl}}/tutors",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"tutors"
 					]
@@ -59,15 +55,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstname\": \"Jimmy\",\n\t\"lastname\": \"Hendrix\",\n\t\"email\": \"jimmy@hendrix.com\",\n\t\"address\": {\n\t\t\"street\": \"Seattle\",\n\t\t\"number\": \"123\",\n\t\t\"city\": \"Washington\",\n\t\t\"zip\": \"98101\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"History\", \"grades\": [\"1\",\"12\"]},\n\t    {\"name\": \"French\", \"grades\": [\"1\",\"7\"]},\n\t    {\"name\": \"Math\", \"grades\": [\"3\",\"12\"]},\n\t    {\"name\": \"Politics\", \"grades\": [\"1\",\"13\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\"\n}"
+					"raw": "{\n\t\"firstname\": \"John\",\n\t\"lastname\": \"Snow\",\n\t\"email\": \"john@snow.com\",\n\t\"password\": \"12345678\",\n\t\"address\": {\n\t\t\"street\": \"Seattle\",\n\t\t\"number\": \"123\",\n\t\t\"city\": \"Washington\",\n\t\t\"zip\": \"98101\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"Math\", \"grades\": [\"3\",\"12\"]},\n\t    {\"name\": \"Physical Education\", \"grades\": [\"1\",\"13\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/tutor",
-					"protocol": "http",
+					"raw": "{{devUrl}}/tutor",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"tutor"
 					]
@@ -87,18 +81,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"address\": {\n\t\t\"number\": \"124\"\n\t}\n}"
+					"raw": "{\n\t\"firstname\": \"Jack\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/tutor/5ada12cde388892dc31d4702",
-					"protocol": "http",
+					"raw": "{{devUrl}}/tutor/5ada1a178a2be73082e803b1",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"tutor",
-						"5ada12cde388892dc31d4702"
+						"5ada1a178a2be73082e803b1"
 					]
 				}
 			},
@@ -111,12 +103,10 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/tutor/5ada124f0bab612da55ef1bb",
-					"protocol": "http",
+					"raw": "{{devUrl}}/tutor/5ada124f0bab612da55ef1bb",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"tutor",
 						"5ada124f0bab612da55ef1bb"
@@ -132,12 +122,10 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/student/5ad858ff7fad8911f4207122",
-					"protocol": "http",
+					"raw": "{{devUrl}}/student/5ad858ff7fad8911f4207122",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"student",
 						"5ad858ff7fad8911f4207122"
@@ -153,12 +141,10 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/students",
-					"protocol": "http",
+					"raw": "{{devUrl}}/students",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"students"
 					]
@@ -178,15 +164,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstname\": \"Sam\",\n\t\"lastname\": \"Slayer\",\n\t\"email\": \"sam@slayer.com\",\n\t\"address\": {\n\t\t\"street\": \"Long Lane\",\n\t\t\"number\": \"12345\",\n\t\t\"city\": \"Seattle\",\n\t\t\"zip\": \"98101\",\n\t\t\"state\": \"Washington\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"Physics\", \"grades\": [\"12\"]},\n\t    {\"name\": \"Biology\", \"grades\": [\"2\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\",\n\t\"grade\": \"12\",\n\t\"schoolType\": \"high\"\n}"
+					"raw": "{\n\t\"firstname\": \"Tywin\",\n\t\"lastname\": \"Lannister\",\n\t\"email\": \"tywin@lannister.com\",\n\t\"password\": \"abcdefgh\",\n\t\"address\": {\n\t\t\"street\": \"Long Lane\",\n\t\t\"number\": \"12345\",\n\t\t\"city\": \"Seattle\",\n\t\t\"zip\": \"98101\",\n\t\t\"state\": \"Washington\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"German\", \"grades\": [\"10\"]},\n\t    {\"name\": \"Chemistry\", \"grades\": [\"10\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\",\n\t\"grade\": \"10\",\n\t\"schoolType\": \"high\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/student",
-					"protocol": "http",
+					"raw": "{{devUrl}}/student",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"student"
 					]
@@ -209,12 +193,10 @@
 					"raw": "{\n\t\"address\": {\n\t\t\"number\": \"124\"\n\t}\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/student/5ada12cde388892dc31d4702",
-					"protocol": "http",
+					"raw": "{{devUrl}}/student/5ada12cde388892dc31d4702",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"student",
 						"5ada12cde388892dc31d4702"
@@ -230,15 +212,50 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/student/5ada124f0bab612da55ef1bb",
-					"protocol": "http",
+					"raw": "{{devUrl}}/student/5ada124f0bab612da55ef1bb",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"student",
 						"5ada124f0bab612da55ef1bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{devUrl}}/connection/5ad858ff7fad8911f4207122",
+					"host": [
+						"{{devUrl}}"
+					],
+					"path": [
+						"connection",
+						"5ad858ff7fad8911f4207122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Connections",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{devUrl}}/connections",
+					"host": [
+						"{{devUrl}}"
+					],
+					"path": [
+						"connections"
 					]
 				}
 			},
@@ -259,12 +276,10 @@
 					"raw": "{\n\t\"student\": \"5ad865ec6cb2b11506035f31\",\n\t\"tutor\": \"5ad858f17fad8911f4207121\",\n\t\"subjects\": [{\"name\": \"Math\", \"grade\": \"7\"}, {\"name\": \"Physics\", \"grade\": \"7\"}]\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/connection",
-					"protocol": "http",
+					"raw": "{{devUrl}}/connection",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"connection"
 					]
@@ -287,12 +302,10 @@
 					"raw": "{\n  \"subjects\": [\n    {\"name\": \"Math\", \"grade\": \"7\"},\n    {\"name\": \"Biology\", \"grade\": \"7\"},\n    {\"name\": \"Physics\", \"grade\": \"7\"}\n  ]\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/connection/5ad89838dd42f41cd04936e7",
-					"protocol": "http",
+					"raw": "{{devUrl}}/connection/5ad89838dd42f41cd04936e7",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"connection",
 						"5ad89838dd42f41cd04936e7"
@@ -308,12 +321,10 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:3000/connection/5ad89838dd42f41cd04936e7",
-					"protocol": "http",
+					"raw": "{{devUrl}}/connection/5ad89838dd42f41cd04936e7",
 					"host": [
-						"localhost"
+						"{{devUrl}}"
 					],
-					"port": "3000",
 					"path": [
 						"connection",
 						"5ad89838dd42f41cd04936e7"

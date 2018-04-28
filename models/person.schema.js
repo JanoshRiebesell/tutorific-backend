@@ -1,5 +1,6 @@
 'use strict';
 
+const mongoose = require('mongoose');
 const validator = require('validator');
 
 const Address = require('./address.schema');
@@ -33,6 +34,7 @@ module.exports = {
     required: 'A person must provide a password!',
     minlength: 6
   },
+  token: String,
   phone: {
     type: String,
     lowercase: true,
@@ -49,13 +51,22 @@ module.exports = {
   },
   status: {
     type: String,
-    enum: ['registered', 'active', 'inactive', 'deleted'],
-    default: 'registered'
+    enum: ['available', 'connected', 'inactive', 'deleted'],
+    default: 'available'
   },
   birthday: Date,
   birthplace: String,
   gender: {
     type: String,
     enum: ['male', 'female', 'other'],
-  }
+  },
+  connections: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Connection',
+  }],
+  type: {
+    type: String,
+    enum: ['student', 'tutor'],
+    required: 'A person must have a type of either student or tutor!'
+  },
 }

@@ -23,8 +23,8 @@ router.post('/tutor', tutorsController.createTutor);
 router.put('/tutor/:id', authMiddleware, tutorsController.updateTutor);
 router.delete('/tutor/:id', authMiddleware, tutorsController.deleteTutor);
 
-router.get('/connection/:id', connectionsController.getconnection);
-router.get('/connections', connectionsController.getconnections);
+router.get('/connection/:id', connectionsController.getConnection);
+router.get('/connections', connectionsController.getConnections);
 router.post('/connection', authMiddleware, connectionsController.createConnection);
 router.put('/connection/:id', authMiddleware, connectionsController.updateConnection);
 router.delete('/connection/:id', authMiddleware, connectionsController.deleteConnection);

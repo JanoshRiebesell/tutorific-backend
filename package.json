@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "mongod & nodemon server.js"
   },
   "dependencies": {
     "bcrypt": "^2.0.1",

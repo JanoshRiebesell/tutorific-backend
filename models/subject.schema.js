@@ -10,15 +10,6 @@ module.exports = new mongoose.Schema({
       'Social Studies', 'Philosophy', 'Economics', 'Physical Education', 'Music', 'Art'],
     required: 'Subject must have a name!'
   },
-  grades: {
-    type: [{
-      type: Number,
-      min: 1,
-      max: 13
-    }],
-    validate: [grades => grades.length > 0, 'A subject must have at least one grade!'],
-    validate: [grades => grades.length < 3, 'A subject can have at most 2 grades!']
-  }
 }, {
   _id: false
 });

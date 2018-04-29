@@ -10,7 +10,19 @@ const TutorSchema = new mongoose.Schema({
     type: Number,
     min: 1,
     max: 50
-  }
+  },
+  minStudentGrade: {
+    type: Number,
+    default: 1,
+    min: 1,
+    max: 13
+  },
+  maxStudentGrade: {
+    type: Number,
+    default: 13,
+    min: 1,
+    max: 13
+  },
 }, {timestamps: true});
 
 module.exports = mongoose.model('Tutor', TutorSchema);

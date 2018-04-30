@@ -5,6 +5,11 @@ const person = require('./person.schema');
 
 const StudentSchema = new mongoose.Schema({
   ...person,
+  userType: {
+    type: String,
+    enum: 'student',
+    default: 'student'
+  },
   schoolType: {
     type: String,
     enum: ['Elementary', 'Middle', 'High', 'Special Needs', 'Vocational', 'Refugee'],

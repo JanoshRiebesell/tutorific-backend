@@ -42,9 +42,7 @@ module.exports = {
     validate: [num => {validator.isMobilePhone(num, 'any')}, 'Invalid phone number!']
   },
   address: {
-    type: Object,
-    required: 'A person must provide an address.',
-    validate: [address => Object.keys(address).length > 0, 'Address cannot be empty!']
+    type: Address
   },
   subjects: {
     type: [subject],

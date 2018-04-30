@@ -1,5 +1,7 @@
 'use strict';
 
+const bcrypt = require('bcrypt');
+
 const Student = require('../models/student.model');
 
 module.exports.getStudent = async (ctx, next) => {
@@ -13,7 +15,11 @@ module.exports.getStudents = async (ctx, next) => {
 };
 
 module.exports.createStudent = async (ctx, next) => {
-  ctx.body = await Student.create(ctx.request.body);
+  const {password} = ctx.request.body;
+  ctx.assert(password, 400, 'Cannot create new student without password!');
+  ctx.request.body.passwordHash = await bcrypt.hash(password, 1);
+  const newStudent = await Student.create(ctx.request.body);
+  ctx.body = `Created new student with id ${newStudent._id}.`;
 };
 
 module.exports.updateStudent = async (ctx, next) => {

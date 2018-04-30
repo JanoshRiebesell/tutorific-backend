@@ -4,6 +4,9 @@ const bcrypt = require('bcrypt');
 const Base64 = require('js-base64').Base64;
 const uuid = require('uuid/v4');
 
+const Student = require('../models/student.model');
+const Tutor = require('../models/tutor.model');
+
 module.exports.login = async (ctx, next) => {
   if ('GET' != ctx.method) return await next();
 
@@ -12,15 +15,16 @@ module.exports.login = async (ctx, next) => {
   const [type, authData] = authorization.split(' ');
   ctx.assert(type.toLowerCase() === 'basic' && authData, 400, 'Invalid authorization type.');
 
-  const [email, password] = Base64.decode(authData).split(':');
-  let user = await User.findOne({email});
+  const [email, password, userType] = Base64.decode(authData).split(':');
+  const Collection = userType === 'student' ? Student : Tutor;
+  const user = await Collection.findOne({email});
   ctx.assert(user, 404, 'No user by that name.');
 
-  const match = await bcrypt.compare(password, user.hash);
-  ctx.assert(!match, 401, 'Invalid password!');
+  const match = await bcrypt.compare(password, user.passwordHash);
+  ctx.assert(match, 401, 'Invalid password!');
   if (!user.token) {
-    const token = uuid();
-    user = await User.findOneAndUpdate({username}, {token}, {new: true});
+    user.token = uuid();
+    await user.save();
   }
   ctx.body = {token: user.token};
 };

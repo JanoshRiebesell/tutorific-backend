@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const Address = require('./address.schema');
-const Subject = require('./subject.schema');
+const subject = require('./subject.schema');
 
 module.exports = {
   firstname: {
@@ -42,12 +42,12 @@ module.exports = {
     validate: [(num) => {validator.isMobilePhone(num, 'any')}, 'Invalid phone number!']
   },
   address: {
-    type: Address,
+    type: Object,
     required: 'A person must provide an address or city district.'
   },
   subjects: {
-    type: [Subject],
-    validate: [subjects => subjects.length > 0, 'A connection must have at least one subject!']
+    type: [subject],
+    validate: [subjects => subjects.length > 0, 'A person must have at least one subject!']
   },
   status: {
     type: String,
@@ -64,7 +64,7 @@ module.exports = {
     type: mongoose.Schema.ObjectId,
     ref: 'Connection',
   }],
-  type: {
+  userType: {
     type: String,
     enum: ['student', 'tutor'],
     required: 'A person must have a type of either student or tutor!'

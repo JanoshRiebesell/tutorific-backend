@@ -5,6 +5,11 @@ const person = require('./person.schema');
 
 const TutorSchema = new mongoose.Schema({
   ...person,
+  userType: {
+    type: String,
+    enum: 'tutor',
+    default: 'tutor'
+  },
   fieldOfStudy: String,
   semester: {
     type: Number,

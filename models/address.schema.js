@@ -3,27 +3,25 @@
 const mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
-  street: {
+  label: {
     type: String,
-    required: 'An address must have a street name!'
+    required: 'An address must have a label!'
   },
-  number: {
+  placeId: {
     type: String,
-    required: 'An address must have a number!'
+    required: 'An address must have a place ID!'
   },
-  city: {
-    type: String,
-    required: 'An address must have a city!'
+  location: {
+    lat: {
+      type: Number,
+      required: 'An address location must have a latitude!'
+    },
+    lng: {
+      type: Number,
+      required: 'An address location must have a longitude!'
+    }
   },
-  zip: {
-    type: String,
-    required: 'An address must have a zip!'
-  },
-  state: String,
-  country: {
-    type: String,
-    required: 'An address must have a country!'
-  }
+  components: Array
 }, {
   _id: false
 });

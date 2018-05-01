@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const Address = require('./address.schema');
+const Location = require('./location.schema');
 const subject = require('./subject.schema');
 
 module.exports = {
@@ -41,8 +41,9 @@ module.exports = {
     trim: true,
     validate: [num => {validator.isMobilePhone(num, 'any')}, 'Invalid phone number!']
   },
-  address: {
-    type: Address
+  location: {
+    type: Location,
+    index: '2dsphere',
   },
   subjects: {
     type: [subject],

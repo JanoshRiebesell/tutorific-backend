@@ -26,5 +26,5 @@ module.exports.login = async (ctx, next) => {
     user.token = uuid();
     await user.save();
   }
-  ctx.body = {token: user.token};
+  ctx.body = user;
 };

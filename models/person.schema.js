@@ -7,16 +7,16 @@ const Location = require('./location.schema');
 const subject = require('./subject.schema');
 
 module.exports = {
-  firstname: {
+  firstName: {
     type: String,
-    required: 'A person must provide a firstname!',
+    required: 'A person must provide a first name!',
     trim: true,
     minlength: 3,
     maxlength: 50
   },
-  lastname: {
+  lastName: {
     type: String,
-    required: 'A person must provide a lastname!',
+    required: 'A person must provide a last name!',
     trim: true,
     minlength: 3,
     maxlength: 50
@@ -54,8 +54,8 @@ module.exports = {
     enum: ['available', 'connected', 'inactive', 'deleted'],
     default: 'available'
   },
-  birthday: Date,
-  birthplace: String,
+  birthDate: Date,
+  birthPlace: String,
   gender: {
     type: String,
     enum: ['male', 'female', 'other'],

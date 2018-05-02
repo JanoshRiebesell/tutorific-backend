@@ -2,8 +2,7 @@
 
 const Router = require('koa-router');
 
-const tutorsController = require('./controllers/tutors.controller');
-const studentsController = require('./controllers/students.controller');
+const personsController = require('./controllers/persons.controller');
 const connectionsController = require('./controllers/connections.controller');
 const authorizationController = require('./controllers/authorization.controller');
 
@@ -11,17 +10,11 @@ const authMiddleware = require('./middlewares/authorization').authorize;
 
 const router = new Router;
 
-router.get('/student/:id', studentsController.getStudent);
-router.get('/students', studentsController.getStudents);
-router.post('/student', studentsController.createStudent);
-router.put('/student/:id', authMiddleware, studentsController.updateStudent);
-router.delete('/student/:id', authMiddleware, studentsController.deleteStudent);
-
-router.get('/tutor/:id', tutorsController.getTutor);
-router.get('/tutors', tutorsController.getTutors);
-router.post('/tutor', tutorsController.createTutor);
-router.put('/tutor/:id', authMiddleware, tutorsController.updateTutor);
-router.delete('/tutor/:id', authMiddleware, tutorsController.deleteTutor);
+router.get('/person/:id', personsController.getPerson);
+router.get('/persons', personsController.getPersons);
+router.post('/person', personsController.createPerson);
+router.put('/person/:id', authMiddleware, personsController.updatePerson);
+router.delete('/person/:id', authMiddleware, personsController.deletePerson);
 
 router.get('/connection/:id', connectionsController.getConnection);
 router.get('/connections', connectionsController.getConnections);

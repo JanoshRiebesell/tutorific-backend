@@ -25,10 +25,7 @@ app.use(router.allowedMethods());
 
 app.use(compress());
 
-if (!module.parent) {
-  const ip = process.env.ip || 'localhost';
-  const port = process.env.port || 3000;
-  app.listen(port, ip, () => {
-    console.log(`Server running at http://${ip}:${port}`);
-  });
-}
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

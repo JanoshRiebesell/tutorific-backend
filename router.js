@@ -8,9 +8,8 @@ const authorizationController = require('./controllers/authorization.controller'
 
 const authMiddleware = require('./middlewares/authorization').authorize;
 
-const router = new Router;
+const router = new Router();
 
-router.get('/person/:id', personsController.getPerson);
 router.get('/persons', personsController.getPersons);
 router.post('/person', personsController.createPerson);
 router.put('/person/:id', authMiddleware, personsController.updatePerson);

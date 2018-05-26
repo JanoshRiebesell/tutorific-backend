@@ -12,7 +12,14 @@ const StudentSchema = new mongoose.Schema({
   },
   schoolType: {
     type: String,
-    enum: ['Elementary', 'Middle', 'High', 'Special Needs', 'Vocational', 'Refugee'],
+    enum: [
+      'Elementary School',
+      'Middle School',
+      'High School',
+      'Special Needs School',
+      'Vocational School',
+      'Refugee School',
+    ],
     required: 'A student must provide his/her type of school!'
   },
   grade: {

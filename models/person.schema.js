@@ -3,8 +3,8 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const Location = require('./location.schema');
-const subject = require('./subject.schema');
+const Address = require('./address.schema');
+const Subject = require('./subject.schema');
 
 module.exports = {
   firstName: {
@@ -41,12 +41,12 @@ module.exports = {
     trim: true,
     validate: [num => {validator.isMobilePhone(num, 'any')}, 'Invalid phone number!']
   },
-  location: {
-    type: Location,
+  address: {
+    type: Address,
     index: '2dsphere',
   },
   subjects: {
-    type: [subject],
+    type: [Subject],
     validate: [subjects => subjects.length > 0, 'A person must have at least one subject!']
   },
   status: {
@@ -58,7 +58,7 @@ module.exports = {
   birthPlace: String,
   gender: {
     type: String,
-    enum: ['male', 'female', 'other'],
+    enum: ['male', 'female'],
   },
   connections: [{
     type: mongoose.Schema.ObjectId,

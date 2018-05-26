@@ -1,30 +1,61 @@
 'use strict';
 
 const bcrypt = require('bcrypt');
+const NodeGeocoder = require('node-geocoder');
 
 const Tutor = require('../models/tutor.model');
 const Student = require('../models/student.model');
 
+const geocoder = NodeGeocoder({
+  provider: 'google',
+  apiKey: process.env.GMAPS_API_KEY,
+});
+
+const assembleAddress = ([{
+  longitude, latitude, extra,
+  streetName, streetNumber,
+  zipcode, city, country,
+}]) => ({
+  street: streetName,
+  streetNumber,
+  zipCode: zipcode,
+  city,
+  country,
+  coordinates: [longitude, latitude],
+  placeId: extra.googlePlaceId,
+})
+
 module.exports.createPerson = async (ctx, next) => {
-  const {userType, password, location: {lat, lng}} = ctx.request.body;
-  ctx.assert(userType === 'student' || userType === 'tutor', 400, 'Please provide a user type of either student or tutor!');
+  const {body} = ctx.request;
+  console.log(body);
+  const {userType, password, address} = body;
+  // userType
+  ctx.assert(['student', 'tutor'].includes(userType), 400,
+    'Please provide a user type of either student or tutor!'
+  );
   const Person = userType === 'student' ? Student : Tutor;
+  // password
   ctx.assert(password, 400, `Cannot create new ${userType} without a password!`);
-  ctx.request.body.passwordHash = await bcrypt.hash(password, 1);
-  ctx.request.body.location.coordinates = [lng, lat];
-  ctx.body = await Person.create(ctx.request.body);
+  body.passwordHash = await bcrypt.hash(password, 1);
+  // address
+  await geocoder.geocode(Object.values(address).join(' '), (err, res) => {
+    if (err) return console.log('err', err);
+    body.address = assembleAddress(res);
+  });
+  ctx.body = await Person.create(body);
   ctx.assert(ctx.body, 400, `Could not create ${userType} from provided request body.`);
 };
 
 const constructDbQuery = ({lat, lng, lastLoginAfter, maxDistance, ...rest}) => {
   const dbQuery = {...rest};
   if (lastLoginAfter) dbQuery.updatedAt = {$gte: new Date(lastLoginAfter)};
-  if (lat && lng) dbQuery.location = {
+  if (lat && lng) dbQuery.address = {
     $near: {
       $geometry: {type: 'Point', coordinates: [lng, lat]},
       $maxDistance: maxDistance * 1000,
     }
   };
+  console.log(dbQuery);
   return dbQuery;
 };
 
@@ -42,17 +73,25 @@ module.exports.getPersons = async (ctx, next) => {
     if (cmd === 'count') ctx.body = students + tutors;
     else ctx.body = [...students, ...tutors];
   }
-  if (!ctx.body) {
+  if (!ctx.body && cmd !== 'count') {
     ctx.status = 204;
     ctx.message = `Could not find any ${userType || 'user'}s based on these filters.`;
   }
 };
 
 module.exports.updatePerson = async (ctx, next) => {
-  ctx.assert(ctx.params.id, 400, 'An id must be provided in order to update a person!');
-  ctx.assert(ctx.request.body, 400, 'An request body must be provided in order to update a person!');
-  ctx.body = await Student.findOneAndUpdate(ctx.params.id, ctx.request.body, {new: true, runValidators: true});
-  if (!ctx.body) ctx.body = await Tutor.findByIdAndUpdate(ctx.params.id, ctx.request.body, {new: true, runValidators: true});
+  ctx.assert(ctx.params.id, 400,
+    'An id must be provided in order to update a person!'
+  );
+  ctx.assert(ctx.request.body, 400,
+    'An request body must be provided in order to update a person!'
+  );
+  ctx.body = await Student.findByIdAndUpdate(
+    ctx.params.id, ctx.request.body, {new: true, runValidators: true}
+  );
+  if (!ctx.body) ctx.body = await Tutor.findByIdAndUpdate(
+    ctx.params.id, ctx.request.body, {new: true, runValidators: true}
+  );
   if (!ctx.body) {
     ctx.status = 204;
     ctx.message = `Could not find a tutor or student with id ${ctx.params.id}.`;
@@ -60,7 +99,9 @@ module.exports.updatePerson = async (ctx, next) => {
 };
 
 module.exports.deletePerson = async (ctx, next) => {
-  ctx.assert(ctx.params.id, 400, 'An id must be provided in order to delete a person!');
+  ctx.assert(ctx.params.id, 400,
+    'An id must be provided in order to delete a person!'
+  );
   ctx.body = await Student.findByIdAndRemove(ctx.params.id);
   if (!ctx.body) ctx.body = await Tutor.findByIdAndRemove(ctx.params.id);
   if (!ctx.body) {

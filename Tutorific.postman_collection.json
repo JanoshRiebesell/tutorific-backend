@@ -7,44 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Get Tutor",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{devUrl}}/tutor/5ad858ff7fad8911f4207122",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"tutor",
-						"5ad858ff7fad8911f4207122"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Tutors",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{devUrl}}/tutors",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"tutors"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Tutor",
+			"name": "Create Person",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -55,22 +18,48 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstname\": \"John\",\n\t\"lastname\": \"Snow\",\n\t\"email\": \"john@snow.com\",\n\t\"password\": \"12345678\",\n\t\"address\": {\n\t\t\"street\": \"Seattle\",\n\t\t\"number\": \"123\",\n\t\t\"city\": \"Washington\",\n\t\t\"zip\": \"98101\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"Math\", \"grades\": [\"3\",\"12\"]},\n\t    {\"name\": \"Physical Education\", \"grades\": [\"1\",\"13\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\"\n}"
+					"raw": "{\n   \"firstName\": \"Mance\",\n   \"lastName\": \"Raider\",\n   \"password\": \"1qwertyuiopQ\",\n   \"confirmPassword\": \"1qwertyuiopQ\",\n   \"email\": \"mance@raider.com\",\n   \"userType\": \"student\",\n   \"phone\": \"+49 151 1234 5678\",\n   \"address\": {\n      \"street\": \"Carrer d'Àvila 27\",\n      \"zipCode\": \"08005\",\n      \"city\": \"Barcelona\"\n   },\n   \"birthDate\": \"1990-03-24\",\n   \"birthPlace\": \"Hamburg, Germany\",\n   \"gender\": \"male\",\n   \"youthOrganization\": \"Unicef\",\n   \"grade\": \"7\",\n   \"schoolType\": \"Middle School\",\n   \"semester\": \"5\",\n   \"fieldOfStudy\": \"Theoretical Physics\",\n   \"minStudentGrade\": \"5\",\n   \"maxStudentGrade\": \"12\",\n   \"subjects\": [\n      \"Physics\",\n      \"Math\",\n      \"English\",\n      \"Biology\"\n   ]\n}"
 				},
 				"url": {
-					"raw": "{{devUrl}}/tutor",
+					"raw": "{{devUrl}}/person",
 					"host": [
 						"{{devUrl}}"
 					],
 					"path": [
-						"tutor"
+						"person"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update Tutor",
+			"name": "Get Persons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/persons?userType=tutor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons"
+					],
+					"query": [
+						{
+							"key": "userType",
+							"value": "tutor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Person",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -84,12 +73,12 @@
 					"raw": "{\n\t\"firstname\": \"Jack\"\n}"
 				},
 				"url": {
-					"raw": "{{devUrl}}/tutor/5ada1a178a2be73082e803b1",
+					"raw": "{{devUrl}}/person/5ada1a178a2be73082e803b1",
 					"host": [
 						"{{devUrl}}"
 					],
 					"path": [
-						"tutor",
+						"person",
 						"5ada1a178a2be73082e803b1"
 					]
 				}
@@ -97,18 +86,18 @@
 			"response": []
 		},
 		{
-			"name": "Delete Tutor",
+			"name": "Delete Person",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{devUrl}}/tutor/5ada124f0bab612da55ef1bb",
+					"raw": "{{devUrl}}/person/5ada124f0bab612da55ef1bb",
 					"host": [
 						"{{devUrl}}"
 					],
 					"path": [
-						"tutor",
+						"person",
 						"5ada124f0bab612da55ef1bb"
 					]
 				}
@@ -116,44 +105,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Student",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{devUrl}}/student/5ad858ff7fad8911f4207122",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"student",
-						"5ad858ff7fad8911f4207122"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Students",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{devUrl}}/students",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"students"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Student",
+			"name": "Create Connection",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -164,80 +116,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstname\": \"Tywin\",\n\t\"lastname\": \"Lannister\",\n\t\"email\": \"tywin@lannister.com\",\n\t\"password\": \"abcdefgh\",\n\t\"address\": {\n\t\t\"street\": \"Long Lane\",\n\t\t\"number\": \"12345\",\n\t\t\"city\": \"Seattle\",\n\t\t\"zip\": \"98101\",\n\t\t\"state\": \"Washington\",\n\t\t\"country\": \"USA\"\n\t},\n\t\"phone\": \"+4917612345678\",\n\t\"subjects\": [\n\t    {\"name\": \"German\", \"grades\": [\"10\"]},\n\t    {\"name\": \"Chemistry\", \"grades\": [\"10\"]}\n\t],\n\t\"birthday\": \"01.01.2000\",\n\t\"birthplace\": \"Seattle, Washington\",\n\t\"gender\": \"male\",\n\t\"grade\": \"10\",\n\t\"schoolType\": \"high\"\n}"
+					"raw": "{\n\t\"student\": \"5ada1a178a2be73082e803b1\",\n\t\"tutor\": \"5ada1b26e1d76630b65df95f\",\n\t\"subjects\": [{\"name\": \"Math\", \"grade\": \"7\"}, {\"name\": \"Physics\", \"grade\": \"7\"}]\n}"
 				},
 				"url": {
-					"raw": "{{devUrl}}/student",
+					"raw": "{{devUrl}}/connection",
 					"host": [
 						"{{devUrl}}"
 					],
 					"path": [
-						"student"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Student",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"address\": {\n\t\t\"number\": \"124\"\n\t}\n}"
-				},
-				"url": {
-					"raw": "{{devUrl}}/student/5ada12cde388892dc31d4702",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"student",
-						"5ada12cde388892dc31d4702"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Student",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{devUrl}}/student/5ada124f0bab612da55ef1bb",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"student",
-						"5ada124f0bab612da55ef1bb"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Connection",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "{{devUrl}}/connection/5ad858ff7fad8911f4207122",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"connection",
-						"5ad858ff7fad8911f4207122"
+						"connection"
 					]
 				}
 			},
@@ -256,32 +143,6 @@
 					],
 					"path": [
 						"connections"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Connection",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"student\": \"5ad865ec6cb2b11506035f31\",\n\t\"tutor\": \"5ad858f17fad8911f4207121\",\n\t\"subjects\": [{\"name\": \"Math\", \"grade\": \"7\"}, {\"name\": \"Physics\", \"grade\": \"7\"}]\n}"
-				},
-				"url": {
-					"raw": "{{devUrl}}/connection",
-					"host": [
-						"{{devUrl}}"
-					],
-					"path": [
-						"connection"
 					]
 				}
 			},
@@ -328,6 +189,44 @@
 					"path": [
 						"connection",
 						"5ad89838dd42f41cd04936e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "jacky@theripper.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "yxcvbnm:student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": ""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{devUrl}}/login",
+					"host": [
+						"{{devUrl}}"
+					],
+					"path": [
+						"login"
 					]
 				}
 			},

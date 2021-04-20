@@ -2,7 +2,7 @@
   "name": "tutorific-frontend",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.0.0",
     "js-base64": "^2.5.1",
     "kcors": "^2.2.2",
